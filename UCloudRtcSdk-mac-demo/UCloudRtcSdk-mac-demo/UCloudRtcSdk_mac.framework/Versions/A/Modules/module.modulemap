@@ -1,0 +1,6 @@
+framework module UCloudRtcSdk_mac {
+  umbrella header "UCloudRtcSdk_mac.h"
+
+  export *
+  module * { export * }
+}
