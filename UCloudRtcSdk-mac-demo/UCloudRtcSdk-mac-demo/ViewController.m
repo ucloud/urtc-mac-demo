@@ -22,7 +22,6 @@
 @property (weak) IBOutlet NSButton *sdkSetButton;//sdk设置
 @property (weak) IBOutlet NSButton *switchButton;//切换摄像头
 @property (weak) IBOutlet NSButton *muteMicButton;//静音
-@property (weak) IBOutlet NSButton *muteCameraButton;//禁用视频
 @property (weak) IBOutlet NSButton *listButton;//d可手动订阅的流列表
 
 @property (weak) IBOutlet NSView *remoteView;
@@ -51,6 +50,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.bPublishedDesktop = NO;
     self.allRemoteView = [NSMutableArray array];
     self.allRemoteStream = [NSMutableArray array];
     [self.allRemoteView addObject:_remoteView];
@@ -61,7 +61,19 @@
     [UCloudRtcEngine setLogEnable:YES];
 }
 
-
+///选择是发布桌面还是摄像头 默认摄像头
+- (IBAction)selectedDeskOrCam:(NSSegmentedControl *)sender {
+    switch (sender.selectedSegment) {
+        case 0:
+            self.bPublishedDesktop = NO;
+            break;
+         case 1:
+            self.bPublishedDesktop = YES;
+            break;
+        default:
+            break;
+    }
+}
 
 
 - (IBAction)joinRoom:(id)sender {
@@ -80,54 +92,28 @@
     if(self.bJoined == false)
     {
         _localVideoView.layer.backgroundColor = [NSColor blackColor].CGColor;
-        [self.view addSubview:_localVideoView];
         
         self.engine = [[UCloudRtcEngine alloc]initWithUserId:[self getUserId] appId:APP_ID roomId:roomField.stringValue appKey:APP_KEY token:@""];
         self.engine.engineMode = UCloudRtcEngineModeTrival;
         self.engine.delegate = self;
         self.engine.isAutoPublish = YES;
         self.engine.isAutoSubscribe = YES;
+        self.engine.isDesktop = self.bPublishedDesktop;
         [self.engine setLocalPreview:_localVideoView];
         [self.engine joinRoomWithcompletionHandler:^(NSData * _Nonnull data, NSURLResponse * _Nonnull response, NSError * _Nonnull error) {}];
+        
         self.bJoined = true;
         self.joinButton.title = @"退出房间";
     }
     else if(self.engine!=nil && self.bJoined == true){
         [self.engine leaveRoom];
-        [self.allRemoteView removeAllObjects];
-        [self.allRemoteStream removeAllObjects];
         self.bJoined = false;
         self.joinButton.title = @"加入房间";
         
         self.bPublished = false;
-        //        self._cameraButton.title = @"开始发布";
-        
         self.bPublishedDesktop = false;
-        //        self._desktopButton.title = @"发布桌面";
     }
 }
-
-- (void)startDesktop:(id)sender
-{
-    //    if(self.bJoined == false || self.bCreateRoom == false)
-    //    {
-    //        NSAlert *alert = [NSAlert alertWithMessageText:@"提示" defaultButton:@"明白" alternateButton:nil otherButton:nil informativeTextWithFormat:@"请先创建并加入房间"];
-    //        [alert runModal];
-    //        return;
-    //    }
-    //    if(self.engine != nil && self.bPublishedDesktop == false)
-    //    {
-    ////        [self.engine publishDesktop];
-    //        self.bPublishedDesktop = true;
-    //        self._desktopButton.title = @"停止发布桌面";
-    //    }else
-    //    {
-    ////        [self.engine unPublishDesktop];
-    //        self.bPublishedDesktop = false;
-    //        self._desktopButton.title = @"发布桌面";
-    //    }
-}
-
 
 - (void)startPublish:(id)sender
 {
@@ -151,32 +137,32 @@
     }
 }
 
-- (void)stopCamera:(id)sender
+- (IBAction)stopCamera:(id)sender
 {
     if(self.engine!=nil && self.bStopCamera == false)
     {
         self.bStopCamera = true;
-        //        [self.engine stopCamera:true];
+        [self.engine openCamera:NO];
         self.switchButton.title = @"打开摄像头";
     }else if(self.engine!=nil && self.bStopCamera == true)
     {
         self.bStopCamera = false;
         self.switchButton.title = @"关闭摄像头";
-        //        [self.engine stopCamera:false];
+        [self.engine openCamera:YES];
     }
 }
 
-- (void)startMute:(id)sender
+- (IBAction)startMute:(id)sender
 {
     if(self.engine!=nil && self.bMute == false)
     {
         self.bMute = true;
-        //        [self.engine setVolumeEnable:NO];
+        [self.engine setMute:YES];
         self.muteMicButton.title = @"打开声音";
     }else if(self.engine!=nil && self.bMute == true)
     {
         self.bMute = false;
-        //        [self.engine setVolumeEnable:YES];
+        [self.engine setMute:NO];
         self.muteMicButton.title = @"静音";
     }
 }
@@ -188,8 +174,6 @@
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
 }
 
 #pragma mark UCloudRtcEngineDelegate
@@ -216,5 +200,17 @@
 
 -(void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *)manager{
     NSLog(@"DidLeaveRoom!!!!!!!!!!!!!");
+    
+    for (NSView *view  in [self.localVideoView subviews]) {
+        [view removeFromSuperview];
+    }
+    for (NSView *view  in self.allRemoteView) {
+        view.hidden = YES;
+        for (NSView *subview  in [view subviews]) {
+            [subview removeFromSuperview];
+        }
+    }
+
+    [self.allRemoteStream removeAllObjects];
 }
 @end

@@ -125,6 +125,9 @@ typedef NS_ENUM(NSInteger,UCloudRtcEnginePublishState) {
 /**是否开启纯音频模式  默认否: NO  必须在加入房间之前设置才会生效 否则采用默认值*/
 @property (nonatomic, assign) BOOL isOnlyAudio;
 
+/**发布桌面/摄像头  默认否: NO（摄像头）  必须在加入房间之前设置才会生效 否则采用默认值*/
+@property (nonatomic, assign) BOOL isDesktop;
+
 /**视频分辨率设置 默认:480*360  必须在加入房间之前设置才会生效 否则采用默认值*/
 @property (nonatomic, assign) UCloudRtcEngineVideoProfile videoProfile;
 

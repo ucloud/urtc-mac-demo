@@ -741,7 +741,7 @@
                                     <constraint firstAttribute="height" constant="21" id="MGS-nm-LuR"/>
                                     <constraint firstAttribute="width" constant="82" id="qrk-eD-zaE"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="SDK设置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jQR-Lx-F04">
+                                <buttonCell key="cell" type="push" title="SDK设置" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jQR-Lx-F04">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
@@ -763,6 +763,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="stopCamera:" target="XfG-lQ-9wD" id="S1P-ho-RFa"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nHX-hp-thX">
                                 <rect key="frame" x="585" y="594" width="94" height="32"/>
@@ -774,21 +777,13 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c5N-Lc-pTx">
-                                <rect key="frame" x="687" y="594" width="94" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Hyx-tM-sCo"/>
-                                    <constraint firstAttribute="width" constant="82" id="lTf-BO-Y5f"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="禁用摄像头" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fcp-Lt-8kD">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
+                                <connections>
+                                    <action selector="startMute:" target="XfG-lQ-9wD" id="WA9-Cm-YdM"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UaG-Qw-eBg">
-                                <rect key="frame" x="789" y="594" width="120" height="32"/>
-                                <buttonCell key="cell" type="push" title="可订阅流列表" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j5s-AG-EDx">
+                                <rect key="frame" x="689" y="594" width="120" height="32"/>
+                                <buttonCell key="cell" type="push" title="可订阅流列表" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j5s-AG-EDx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
@@ -834,39 +829,56 @@
                                     <constraint firstAttribute="height" constant="21" id="tUH-sc-kF9"/>
                                     <constraint firstAttribute="width" constant="82" id="uK0-zR-TDR"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="开始发布" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oNX-ML-BRu">
+                                <buttonCell key="cell" type="push" title="开始发布" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oNX-ML-BRu">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
                             </button>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cno-Eq-cMO">
+                                <rect key="frame" x="18" y="550" width="137" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Vno-TM-X1l"/>
+                                </constraints>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="ffM-Qt-hg6">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="摄像头" width="58" selected="YES"/>
+                                        <segment label="桌面" width="57" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="selectedDeskOrCam:" target="XfG-lQ-9wD" id="E7W-zn-Bzn"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="UWG-cO-zeq" secondAttribute="bottom" id="1hc-x1-PeZ"/>
                             <constraint firstItem="n17-cD-CNg" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" constant="-80" id="5iU-Go-6Yi"/>
                             <constraint firstItem="LA2-SH-pAC" firstAttribute="leading" secondItem="d2b-hu-rq5" secondAttribute="trailing" constant="20" id="6hh-8U-mvb"/>
                             <constraint firstAttribute="bottom" secondItem="C8e-0l-pEL" secondAttribute="bottom" id="7Ik-iD-AUL"/>
-                            <constraint firstItem="c5N-Lc-pTx" firstAttribute="leading" secondItem="nHX-hp-thX" secondAttribute="trailing" constant="20" id="7Uu-CP-BNd"/>
                             <constraint firstItem="lkl-QU-Dse" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Dgy-oK-jHy"/>
                             <constraint firstItem="dMg-Em-TIe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="FG4-lD-JUy"/>
                             <constraint firstItem="ecX-XB-hDc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="FtE-N5-U12"/>
                             <constraint firstItem="C8e-0l-pEL" firstAttribute="leading" secondItem="9es-KK-TnU" secondAttribute="trailing" constant="10" id="LHF-LR-Wto"/>
-                            <constraint firstItem="UaG-Qw-eBg" firstAttribute="leading" secondItem="c5N-Lc-pTx" secondAttribute="trailing" constant="20" id="OZB-9B-2dL"/>
                             <constraint firstItem="UWG-cO-zeq" firstAttribute="leading" secondItem="I8A-6N-Hab" secondAttribute="trailing" constant="10" id="Rtk-df-k3R"/>
                             <constraint firstAttribute="bottom" secondItem="9es-KK-TnU" secondAttribute="bottom" id="TL0-6N-M23"/>
                             <constraint firstItem="ecX-XB-hDc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="USl-CF-bFo"/>
+                            <constraint firstItem="cno-Eq-cMO" firstAttribute="trailing" secondItem="ecX-XB-hDc" secondAttribute="trailing" id="WCs-qj-WKi"/>
                             <constraint firstItem="OcI-uT-UPC" firstAttribute="leading" secondItem="UWG-cO-zeq" secondAttribute="trailing" constant="10" id="Wi9-sg-dvD"/>
                             <constraint firstItem="9es-KK-TnU" firstAttribute="leading" secondItem="OcI-uT-UPC" secondAttribute="trailing" constant="10" id="XQi-wo-16a"/>
                             <constraint firstAttribute="bottom" secondItem="I8A-6N-Hab" secondAttribute="bottom" id="YGS-C7-Jec"/>
                             <constraint firstAttribute="bottom" secondItem="OcI-uT-UPC" secondAttribute="bottom" id="ZA0-sL-W0u"/>
                             <constraint firstItem="LA2-SH-pAC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="acZ-Az-ffb"/>
-                            <constraint firstItem="c5N-Lc-pTx" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="alg-oz-GvQ"/>
                             <constraint firstAttribute="bottom" secondItem="I8A-6N-Hab" secondAttribute="bottom" id="c0D-8b-VIh"/>
                             <constraint firstItem="UaG-Qw-eBg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="cQN-jB-kZO"/>
                             <constraint firstItem="nHX-hp-thX" firstAttribute="leading" secondItem="lkl-QU-Dse" secondAttribute="trailing" constant="20" id="chl-dY-Evn"/>
                             <constraint firstItem="lkl-QU-Dse" firstAttribute="leading" secondItem="LA2-SH-pAC" secondAttribute="trailing" constant="20" id="fTb-aq-qWg"/>
                             <constraint firstItem="d2b-hu-rq5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="gAC-6D-g0D"/>
+                            <constraint firstItem="cno-Eq-cMO" firstAttribute="leading" secondItem="ecX-XB-hDc" secondAttribute="leading" id="mEM-80-5bF"/>
                             <constraint firstItem="d2b-hu-rq5" firstAttribute="leading" secondItem="dMg-Em-TIe" secondAttribute="trailing" constant="30" id="ql2-Ps-Ps1"/>
                             <constraint firstItem="dMg-Em-TIe" firstAttribute="leading" secondItem="ecX-XB-hDc" secondAttribute="trailing" constant="20" id="sAR-LJ-c8D"/>
+                            <constraint firstItem="cno-Eq-cMO" firstAttribute="top" secondItem="ecX-XB-hDc" secondAttribute="bottom" constant="27" id="scH-PV-xzA"/>
+                            <constraint firstItem="UaG-Qw-eBg" firstAttribute="leading" secondItem="nHX-hp-thX" secondAttribute="trailing" constant="22" id="vzK-d8-OQM"/>
                             <constraint firstItem="OcI-uT-UPC" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="wPb-NS-332"/>
                             <constraint firstItem="nHX-hp-thX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="xFw-2R-rAH"/>
                             <constraint firstItem="n17-cD-CNg" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="xIg-T0-fO7"/>
@@ -876,7 +888,6 @@
                         <outlet property="joinButton" destination="dMg-Em-TIe" id="8OD-1t-DOh"/>
                         <outlet property="listButton" destination="UaG-Qw-eBg" id="LC1-8A-r3k"/>
                         <outlet property="localVideoView" destination="n17-cD-CNg" id="4yP-6g-MXn"/>
-                        <outlet property="muteCameraButton" destination="c5N-Lc-pTx" id="52A-B4-BEI"/>
                         <outlet property="muteMicButton" destination="nHX-hp-thX" id="SSY-Ah-hxN"/>
                         <outlet property="publishButton" destination="LA2-SH-pAC" id="bUw-Bd-m17"/>
                         <outlet property="remoteView" destination="I8A-6N-Hab" id="Dc7-av-jJV"/>
@@ -890,6 +901,7 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="Zkw-63-4Z1"/>
             </objects>
             <point key="canvasLocation" x="145" y="722"/>
         </scene>
