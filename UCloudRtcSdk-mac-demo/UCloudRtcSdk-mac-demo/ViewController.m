@@ -108,10 +108,9 @@
     else if(self.engine!=nil && self.bJoined == true){
         [self.engine leaveRoom];
         self.bJoined = false;
-        self.joinButton.title = @"加入房间";
-        
         self.bPublished = false;
         self.bPublishedDesktop = false;
+        self.joinButton.title = @"加入房间";
     }
 }
 
@@ -188,6 +187,8 @@
         if (view.hidden == YES) {
             [stream renderOnView:view];
             view.hidden = NO;
+            view.toolTip = stream.userId;
+            [view addToolTipRect:view.bounds owner:view userData:nil];
             break;
         }
     }
@@ -196,6 +197,14 @@
 -(void)uCloudRtcEngine:(UCloudRtcEngine *)manager didRemoveStream:(UCloudRtcStream *)stream{
     [self.allRemoteStream removeObject:stream];
     
+    for (NSView *view in self.allRemoteView) {
+        if ([view.toolTip isEqualToString:stream.userId]) {
+            view.hidden = YES;
+            for (NSView *subview  in [view subviews]) {
+                [subview removeFromSuperview];
+            }
+        }
+    }
 }
 
 -(void)uCloudRtcEngineDidLeaveRoom:(UCloudRtcEngine *)manager{
