@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38FF79D92551075E00AFE84F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FF79D82551075E00AFE84F /* AppDelegate.m */; };
+		38FF79DC2551075E00AFE84F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FF79DB2551075E00AFE84F /* ViewController.m */; };
+		38FF79DE2551075F00AFE84F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FF79DD2551075F00AFE84F /* Assets.xcassets */; };
+		38FF79E12551075F00AFE84F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FF79DF2551075F00AFE84F /* Main.storyboard */; };
+		38FF79E42551075F00AFE84F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FF79E32551075F00AFE84F /* main.m */; };
+		38FF79EF2551075F00AFE84F /* urtc_mac_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FF79EE2551075F00AFE84F /* urtc_mac_demoTests.m */; };
+		38FF79FA2551075F00AFE84F /* urtc_mac_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FF79F92551075F00AFE84F /* urtc_mac_demoUITests.m */; };
+		38FF7A092551079E00AFE84F /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF7A082551079E00AFE84F /* libbz2.tbd */; };
+		38FF7A0B255107A300AFE84F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF7A0A255107A300AFE84F /* libz.tbd */; };
+		38FF7A0D255107AC00AFE84F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF7A0C255107AC00AFE84F /* libiconv.tbd */; };
+		38FF7A0F255107B200AFE84F /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF7A0E255107B200AFE84F /* VideoToolbox.framework */; };
+		38FF7A13255107CB00AFE84F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF7A12255107CB00AFE84F /* OpenGL.framework */; };
+		38FF7A1A2551089700AFE84F /* UCloudMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FF7A142551089700AFE84F /* UCloudMainViewController.m */; };
+		38FF7A1B2551089700AFE84F /* UCloudRemoteViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FF7A162551089700AFE84F /* UCloudRemoteViewItem.m */; };
+		38FF7A1C2551089700AFE84F /* UCloudRemoteViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FF7A172551089700AFE84F /* UCloudRemoteViewItem.xib */; };
+		38FF7A1D2551089700AFE84F /* UCloudMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FF7A192551089700AFE84F /* UCloudMainViewController.xib */; };
+		38FF7B1E255108FC00AFE84F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF7B1D255108FC00AFE84F /* libc++.tbd */; };
+		38FF7B202551090C00AFE84F /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF7B1F2551090C00AFE84F /* MetalKit.framework */; };
+		38FF7B232551242900AFE84F /* UCloudRtcSdk_mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF7B21255123CD00AFE84F /* UCloudRtcSdk_mac.framework */; };
+		38FF7B242551242900AFE84F /* UCloudRtcSdk_mac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF7B21255123CD00AFE84F /* UCloudRtcSdk_mac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38FF79EB2551075F00AFE84F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38FF79CC2551075E00AFE84F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38FF79D32551075E00AFE84F;
+			remoteInfo = "urtc-mac-demo";
+		};
+		38FF79F62551075F00AFE84F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38FF79CC2551075E00AFE84F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38FF79D32551075E00AFE84F;
+			remoteInfo = "urtc-mac-demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		38FF7B252551242900AFE84F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				38FF7B242551242900AFE84F /* UCloudRtcSdk_mac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		38FF79D42551075E00AFE84F /* urtc-mac-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "urtc-mac-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38FF79D72551075E00AFE84F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		38FF79D82551075E00AFE84F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		38FF79DA2551075E00AFE84F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		38FF79DB2551075E00AFE84F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		38FF79DD2551075F00AFE84F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38FF79E02551075F00AFE84F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38FF79E22551075F00AFE84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38FF79E32551075F00AFE84F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		38FF79E52551075F00AFE84F /* urtc_mac_demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = urtc_mac_demo.entitlements; sourceTree = "<group>"; };
+		38FF79EA2551075F00AFE84F /* urtc-mac-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "urtc-mac-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38FF79EE2551075F00AFE84F /* urtc_mac_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = urtc_mac_demoTests.m; sourceTree = "<group>"; };
+		38FF79F02551075F00AFE84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38FF79F52551075F00AFE84F /* urtc-mac-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "urtc-mac-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38FF79F92551075F00AFE84F /* urtc_mac_demoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = urtc_mac_demoUITests.m; sourceTree = "<group>"; };
+		38FF79FB2551075F00AFE84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38FF7A082551079E00AFE84F /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		38FF7A0A255107A300AFE84F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		38FF7A0C255107AC00AFE84F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		38FF7A0E255107B200AFE84F /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		38FF7A10255107C200AFE84F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		38FF7A12255107CB00AFE84F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		38FF7A142551089700AFE84F /* UCloudMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCloudMainViewController.m; sourceTree = "<group>"; };
+		38FF7A152551089700AFE84F /* UCloudRemoteViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudRemoteViewItem.h; sourceTree = "<group>"; };
+		38FF7A162551089700AFE84F /* UCloudRemoteViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCloudRemoteViewItem.m; sourceTree = "<group>"; };
+		38FF7A172551089700AFE84F /* UCloudRemoteViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCloudRemoteViewItem.xib; sourceTree = "<group>"; };
+		38FF7A182551089700AFE84F /* UCloudMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMainViewController.h; sourceTree = "<group>"; };
+		38FF7A192551089700AFE84F /* UCloudMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCloudMainViewController.xib; sourceTree = "<group>"; };
+		38FF7B1D255108FC00AFE84F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		38FF7B1F2551090C00AFE84F /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		38FF7B21255123CD00AFE84F /* UCloudRtcSdk_mac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UCloudRtcSdk_mac.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38FF79D12551075E00AFE84F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FF7B202551090C00AFE84F /* MetalKit.framework in Frameworks */,
+				38FF7B1E255108FC00AFE84F /* libc++.tbd in Frameworks */,
+				38FF7A13255107CB00AFE84F /* OpenGL.framework in Frameworks */,
+				38FF7A0F255107B200AFE84F /* VideoToolbox.framework in Frameworks */,
+				38FF7A0D255107AC00AFE84F /* libiconv.tbd in Frameworks */,
+				38FF7B232551242900AFE84F /* UCloudRtcSdk_mac.framework in Frameworks */,
+				38FF7A0B255107A300AFE84F /* libz.tbd in Frameworks */,
+				38FF7A092551079E00AFE84F /* libbz2.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FF79E72551075F00AFE84F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FF79F22551075F00AFE84F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38FF79CB2551075E00AFE84F = {
+			isa = PBXGroup;
+			children = (
+				38FF79D62551075E00AFE84F /* urtc-mac-demo */,
+				38FF79ED2551075F00AFE84F /* urtc-mac-demoTests */,
+				38FF79F82551075F00AFE84F /* urtc-mac-demoUITests */,
+				38FF79D52551075E00AFE84F /* Products */,
+				38FF7A072551079D00AFE84F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		38FF79D52551075E00AFE84F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38FF79D42551075E00AFE84F /* urtc-mac-demo.app */,
+				38FF79EA2551075F00AFE84F /* urtc-mac-demoTests.xctest */,
+				38FF79F52551075F00AFE84F /* urtc-mac-demoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38FF79D62551075E00AFE84F /* urtc-mac-demo */ = {
+			isa = PBXGroup;
+			children = (
+				38FF7B21255123CD00AFE84F /* UCloudRtcSdk_mac.framework */,
+				38FF7A182551089700AFE84F /* UCloudMainViewController.h */,
+				38FF7A142551089700AFE84F /* UCloudMainViewController.m */,
+				38FF7A192551089700AFE84F /* UCloudMainViewController.xib */,
+				38FF7A152551089700AFE84F /* UCloudRemoteViewItem.h */,
+				38FF7A162551089700AFE84F /* UCloudRemoteViewItem.m */,
+				38FF7A172551089700AFE84F /* UCloudRemoteViewItem.xib */,
+				38FF79D72551075E00AFE84F /* AppDelegate.h */,
+				38FF79D82551075E00AFE84F /* AppDelegate.m */,
+				38FF79DA2551075E00AFE84F /* ViewController.h */,
+				38FF79DB2551075E00AFE84F /* ViewController.m */,
+				38FF79DD2551075F00AFE84F /* Assets.xcassets */,
+				38FF79DF2551075F00AFE84F /* Main.storyboard */,
+				38FF79E22551075F00AFE84F /* Info.plist */,
+				38FF79E32551075F00AFE84F /* main.m */,
+				38FF79E52551075F00AFE84F /* urtc_mac_demo.entitlements */,
+			);
+			path = "urtc-mac-demo";
+			sourceTree = "<group>";
+		};
+		38FF79ED2551075F00AFE84F /* urtc-mac-demoTests */ = {
+			isa = PBXGroup;
+			children = (
+				38FF79EE2551075F00AFE84F /* urtc_mac_demoTests.m */,
+				38FF79F02551075F00AFE84F /* Info.plist */,
+			);
+			path = "urtc-mac-demoTests";
+			sourceTree = "<group>";
+		};
+		38FF79F82551075F00AFE84F /* urtc-mac-demoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				38FF79F92551075F00AFE84F /* urtc_mac_demoUITests.m */,
+				38FF79FB2551075F00AFE84F /* Info.plist */,
+			);
+			path = "urtc-mac-demoUITests";
+			sourceTree = "<group>";
+		};
+		38FF7A072551079D00AFE84F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38FF7B1F2551090C00AFE84F /* MetalKit.framework */,
+				38FF7B1D255108FC00AFE84F /* libc++.tbd */,
+				38FF7A12255107CB00AFE84F /* OpenGL.framework */,
+				38FF7A10255107C200AFE84F /* GLKit.framework */,
+				38FF7A0E255107B200AFE84F /* VideoToolbox.framework */,
+				38FF7A0C255107AC00AFE84F /* libiconv.tbd */,
+				38FF7A0A255107A300AFE84F /* libz.tbd */,
+				38FF7A082551079E00AFE84F /* libbz2.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38FF79D32551075E00AFE84F /* urtc-mac-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38FF79FE2551075F00AFE84F /* Build configuration list for PBXNativeTarget "urtc-mac-demo" */;
+			buildPhases = (
+				38FF79D02551075E00AFE84F /* Sources */,
+				38FF79D12551075E00AFE84F /* Frameworks */,
+				38FF79D22551075E00AFE84F /* Resources */,
+				38FF7B252551242900AFE84F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "urtc-mac-demo";
+			productName = "urtc-mac-demo";
+			productReference = 38FF79D42551075E00AFE84F /* urtc-mac-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		38FF79E92551075F00AFE84F /* urtc-mac-demoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38FF7A012551075F00AFE84F /* Build configuration list for PBXNativeTarget "urtc-mac-demoTests" */;
+			buildPhases = (
+				38FF79E62551075F00AFE84F /* Sources */,
+				38FF79E72551075F00AFE84F /* Frameworks */,
+				38FF79E82551075F00AFE84F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38FF79EC2551075F00AFE84F /* PBXTargetDependency */,
+			);
+			name = "urtc-mac-demoTests";
+			productName = "urtc-mac-demoTests";
+			productReference = 38FF79EA2551075F00AFE84F /* urtc-mac-demoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		38FF79F42551075F00AFE84F /* urtc-mac-demoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38FF7A042551075F00AFE84F /* Build configuration list for PBXNativeTarget "urtc-mac-demoUITests" */;
+			buildPhases = (
+				38FF79F12551075F00AFE84F /* Sources */,
+				38FF79F22551075F00AFE84F /* Frameworks */,
+				38FF79F32551075F00AFE84F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38FF79F72551075F00AFE84F /* PBXTargetDependency */,
+			);
+			name = "urtc-mac-demoUITests";
+			productName = "urtc-mac-demoUITests";
+			productReference = 38FF79F52551075F00AFE84F /* urtc-mac-demoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38FF79CC2551075E00AFE84F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = UCloud;
+				TargetAttributes = {
+					38FF79D32551075E00AFE84F = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					38FF79E92551075F00AFE84F = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 38FF79D32551075E00AFE84F;
+					};
+					38FF79F42551075F00AFE84F = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 38FF79D32551075E00AFE84F;
+					};
+				};
+			};
+			buildConfigurationList = 38FF79CF2551075E00AFE84F /* Build configuration list for PBXProject "urtc-mac-demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38FF79CB2551075E00AFE84F;
+			productRefGroup = 38FF79D52551075E00AFE84F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38FF79D32551075E00AFE84F /* urtc-mac-demo */,
+				38FF79E92551075F00AFE84F /* urtc-mac-demoTests */,
+				38FF79F42551075F00AFE84F /* urtc-mac-demoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38FF79D22551075E00AFE84F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FF79DE2551075F00AFE84F /* Assets.xcassets in Resources */,
+				38FF7A1D2551089700AFE84F /* UCloudMainViewController.xib in Resources */,
+				38FF79E12551075F00AFE84F /* Main.storyboard in Resources */,
+				38FF7A1C2551089700AFE84F /* UCloudRemoteViewItem.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FF79E82551075F00AFE84F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FF79F32551075F00AFE84F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38FF79D02551075E00AFE84F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FF7A1B2551089700AFE84F /* UCloudRemoteViewItem.m in Sources */,
+				38FF79DC2551075E00AFE84F /* ViewController.m in Sources */,
+				38FF7A1A2551089700AFE84F /* UCloudMainViewController.m in Sources */,
+				38FF79E42551075F00AFE84F /* main.m in Sources */,
+				38FF79D92551075E00AFE84F /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FF79E62551075F00AFE84F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FF79EF2551075F00AFE84F /* urtc_mac_demoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38FF79F12551075F00AFE84F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38FF79FA2551075F00AFE84F /* urtc_mac_demoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38FF79EC2551075F00AFE84F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38FF79D32551075E00AFE84F /* urtc-mac-demo */;
+			targetProxy = 38FF79EB2551075F00AFE84F /* PBXContainerItemProxy */;
+		};
+		38FF79F72551075F00AFE84F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38FF79D32551075E00AFE84F /* urtc-mac-demo */;
+			targetProxy = 38FF79F62551075F00AFE84F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		38FF79DF2551075F00AFE84F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38FF79E02551075F00AFE84F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		38FF79FC2551075F00AFE84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		38FF79FD2551075F00AFE84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		38FF79FF2551075F00AFE84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "urtc-mac-demo/urtc_mac_demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = CFP9KY4MGC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/urtc-mac-demo",
+				);
+				INFOPLIST_FILE = "urtc-mac-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../project/urtc-sdk-mac/UCloudRtcSdk-mac/UCloudRtcSdk-mac/UCloudRtcSdk/RTC/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.2.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.URTC-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		38FF7A002551075F00AFE84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "urtc-mac-demo/urtc_mac_demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = CFP9KY4MGC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/urtc-mac-demo",
+				);
+				INFOPLIST_FILE = "urtc-mac-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../project/urtc-sdk-mac/UCloudRtcSdk-mac/UCloudRtcSdk-mac/UCloudRtcSdk/RTC/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.2.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.URTC-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		38FF7A022551075F00AFE84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "urtc-mac-demoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.urtc-mac-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/urtc-mac-demo.app/Contents/MacOS/urtc-mac-demo";
+			};
+			name = Debug;
+		};
+		38FF7A032551075F00AFE84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "urtc-mac-demoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.urtc-mac-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/urtc-mac-demo.app/Contents/MacOS/urtc-mac-demo";
+			};
+			name = Release;
+		};
+		38FF7A052551075F00AFE84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "urtc-mac-demoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.urtc-mac-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "urtc-mac-demo";
+			};
+			name = Debug;
+		};
+		38FF7A062551075F00AFE84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "urtc-mac-demoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.ucloud.urtc-mac-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "urtc-mac-demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38FF79CF2551075E00AFE84F /* Build configuration list for PBXProject "urtc-mac-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38FF79FC2551075F00AFE84F /* Debug */,
+				38FF79FD2551075F00AFE84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38FF79FE2551075F00AFE84F /* Build configuration list for PBXNativeTarget "urtc-mac-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38FF79FF2551075F00AFE84F /* Debug */,
+				38FF7A002551075F00AFE84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38FF7A012551075F00AFE84F /* Build configuration list for PBXNativeTarget "urtc-mac-demoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38FF7A022551075F00AFE84F /* Debug */,
+				38FF7A032551075F00AFE84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38FF7A042551075F00AFE84F /* Build configuration list for PBXNativeTarget "urtc-mac-demoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38FF7A052551075F00AFE84F /* Debug */,
+				38FF7A062551075F00AFE84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38FF79CC2551075E00AFE84F /* Project object */;
+}
