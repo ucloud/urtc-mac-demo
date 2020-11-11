@@ -15,7 +15,13 @@
 #define APP_ID @""
 #define APP_KEY @""
 
+#define Record_Bucket @"urtc-test"
+#define Record_Region @"cn-bj"
+
 @interface UCloudMainViewController ()<NSCollectionViewDelegate, NSCollectionViewDataSource, UCloudRtcEngineDelegate>
+{
+    NSString *_cloudRecordFileName;//云端录制文件名字
+}
 @property (weak) IBOutlet NSView *localView;
 @property (weak) IBOutlet NSCollectionView *collectionView;
 @property (weak) IBOutlet NSButton *stopBtn;
@@ -37,8 +43,6 @@
 @property (nonatomic, strong) NSMutableArray *canSubstreamList;
 @property (nonatomic, strong) NSMutableArray *remoteStreamList;//已订阅远端流
 @property (nonatomic, strong) NSMutableArray *collectionViewRenderList;//collectionview渲染列表
-
-
 
 @end
 static NSString *mainCellID = @"UCloudRemoteViewItemId";
@@ -380,7 +384,7 @@ static NSString *mainCellID = @"UCloudRemoteViewItemId";
 /// 转推、录制、转推录制、更新
 - (void)startMixPushAndRecord {
     UCloudRtcMixConfig *mixConfig = [UCloudRtcMixConfig new];
-    mixConfig.type = UCloudRtcMixConfigTypePushAndRecord;
+    mixConfig.type = UCloudRtcMixConfigTypeRecord;
     mixConfig.streams = @[];
     mixConfig.pushurl = @[];
     mixConfig.layout = 1;
@@ -395,8 +399,8 @@ static NSString *mainCellID = @"UCloudRemoteViewItemId";
     mixConfig.mainviewuid = self.userId;
     mixConfig.width = 640;
     mixConfig.height = 480;
-    mixConfig.bucket = @"urtc-test";
-    mixConfig.region =@"cn-bj";
+    mixConfig.bucket = Record_Bucket;
+    mixConfig.region = Record_Region;
     mixConfig.watertype = 1;
     mixConfig.waterpos = 1;
     mixConfig.waterurl = @"http://urtc-living-test.cn-bj.ufileos.com/test.png";
@@ -406,7 +410,7 @@ static NSString *mainCellID = @"UCloudRemoteViewItemId";
 }
 - (void)stopMix {
     UCloudRtcMixStopConfig *mixStopConfig = [UCloudRtcMixStopConfig new];
-    mixStopConfig.type = UCloudRtcMixConfigTypePushAndRecord;
+    mixStopConfig.type = UCloudRtcMixConfigTypeRecord;
     mixStopConfig.pushurl = @[];
     [self.rtcEngine stopMix: mixStopConfig];
 }
@@ -635,10 +639,46 @@ static NSString *mainCellID = @"UCloudRemoteViewItemId";
     
 
 }
-
--(void)uCloudRtcEngine:(UCloudRtcEngine *)manager startRecord:(NSDictionary *)recordResponse{
-//    [self.view makeToast:[NSString stringWithFormat:@"视频录制文件:%@",recordResponse[@"FileName"]] duration:3.0 position:CSToastPositionCenter];
+/// 开始录制
+-(void)uCloudRtcEngine:(UCloudRtcEngine *)manager startMix:(UCloudRtcMixResponse * _Nonnull)mixReponse {
+    _cloudRecordFileName = mixReponse.filename;
+    if (_cloudRecordFileName) {
+        
+        NSLog(@"录制文件名字：%@",mixReponse.filename);
+    } else {
+        NSLog(@"转推id：%@",mixReponse.mixId);
+    }
     
+}
+/// 停止录制
+- (void)uCloudRtcEngineDidStopMix:(UCloudRtcEngine *_Nonnull)manager {
+    if (!_cloudRecordFileName) {
+        return;
+    }
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.alertStyle = NSAlertStyleWarning;
+    [alert addButtonWithTitle:@"复制地址"];
+    [alert addButtonWithTitle:@"取消"];
+    alert.messageText = @"录制地址";
+    NSString *fileurl = [NSString stringWithFormat:@"http://%@.%@.ufileos.com/%@.mp4", Record_Bucket, Record_Region, _cloudRecordFileName];
+    
+//         http://"bucket存储空间名称.region地域.ufileos.com"/"file_name".mp4
+    alert.informativeText = fileurl;
+//        __weak typeof(self) weakSelf = self;
+    [alert beginSheetModalForWindow:[NSApplication sharedApplication].keyWindow completionHandler:^(NSModalResponse returnCode) {
+        if (returnCode == NSAlertFirstButtonReturn) {
+//                 http://"bucket存储空间名称.region地域.ufileos.com"/"file_name".mp4
+            NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+            [pasteboard declareTypes:@[NSPasteboardTypeString] owner:nil];
+            [pasteboard setString:fileurl forType:NSPasteboardTypeString];
+//
+            
+        } else if (returnCode == NSAlertSecondButtonReturn) {
+            NSLog(@"取消");
+        } else {
+            NSLog(@"else");
+        }
+    }];
 
 }
 

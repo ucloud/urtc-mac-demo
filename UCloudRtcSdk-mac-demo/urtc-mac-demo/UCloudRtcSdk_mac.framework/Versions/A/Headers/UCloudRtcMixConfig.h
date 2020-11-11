@@ -11,8 +11,8 @@
 
 typedef enum : NSUInteger {
     UCloudRtcMixConfigTypePush = 1,
-    UCloudRtcMixConfigTypePushAndRecord,
     UCloudRtcMixConfigTypeRecord,
+    UCloudRtcMixConfigTypePushAndRecord,
     UCloudRtcMixConfigTypeUpdate,
 } UCloudRtcMixConfigType;
 
